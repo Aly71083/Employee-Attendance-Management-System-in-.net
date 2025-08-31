@@ -1,0 +1,25 @@
+﻿@model DATA.Attendance
+
+@{
+    ViewData["Title"] = "Attendance Details";
+}
+
+<h2>Attendance Details</h2>
+
+<div class="card p-3">
+    <dl class="row">
+        <dt class="col-sm-3">Employee</dt>
+        <dd class="col-sm-9">@Model.Employee?.Name</dd>
+
+        <dt class="col-sm-3">Date</dt>
+        <dd class="col-sm-9">@Model.Date.ToString("yyyy-MM-dd")</dd>
+
+        <dt class="col-sm-3">Status</dt>
+        <dd class="col-sm-9">@Model.Status</dd>
+    </dl>
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</p>
